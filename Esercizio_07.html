@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio 07</title>
+</head>
+
+<body>
+
+    <script>
+
+        class Tabella {
+            nomiColonne;
+            data;
+
+            constructor(nomiColonne, data) {
+                this.nomiColonne = nomiColonne;
+                this.data = data;
+                this.creaTabella();
+            }
+
+            creaTabella() {
+                const tabella = document.createElement("table");
+                tabella.appendChild(this.generaColonne());
+                tabella.appendChild(this.generaRighe());
+                document.querySelector("body").appendChild(tabella);
+            }
+
+            generaColonne() {
+                const thead = document.createElement("thead");
+                this.nomiColonne.forEach((nomeColonna) => {
+                    const th = document.createElement("th");
+                    const text = document.createTextNode(nomeColonna);
+                    th.appendChild(text);
+                    thead.appendChild(th);
+                });
+                return thead;
+            }
+            generaRighe() {
+                const tbody = document.createElement("tbody");
+                this.data.forEach((riga) => {
+                    const tr = document.createElement("tr");
+                    Object.keys(riga).forEach((key) => {
+                        const cella = document.createElement("td");
+                        const text = document.createTextNode(riga[key]);
+                        cella.appendChild(text);
+                        tr.appendChild(cella);
+                    });
+                    tbody.appendChild(tr);
+                });
+                return tbody;
+            }
+        }
+
+        const nomiColonne1 = [
+            "id",
+            "nome",
+            "cognome",
+            "email",
+            "codice fiscale",
+            "indirizzo",
+        ];
+
+        const data1 = [
+            {
+                id: 1,
+                nome: "Federico",
+                cognome: "Mereu",
+                email: "federico.mereu@gmaail.it",
+                codiceFiscale: "kdrwde32f93x109m",
+                indirizzo: "Via Cenischia",
+            },
+            {
+                id: 2,
+                nome: "Linda",
+                cognome: "Ianniello",
+                email: "linda.ianniello@gmaail.it",
+                codiceFiscale: "kdrwde32f93x109m",
+                indirizzo: "Via Bianzè",
+            },
+            {
+                id: 3,
+                nome: "Gloria",
+                cognome: "Zangrando",
+                email: "gloriosa@gmaail.it",
+                codiceFiscale: "kdrwde32f93x109m",
+                indirizzo: "Via Cenischia",
+            },
+            {
+                id: 4,
+                nome: "Vincenzo",
+                cognome: "Mereu",
+                email: "vincenzo.mereu@gmaail.it",
+                codiceFiscale: "kdrwde32f93x109m",
+                indirizzo: "Via Cenischia",
+            },
+        ];
+
+        const tabella1 = new Tabella(nomiColonne1, data1);
+
+        const nomiColonne2 = ["id", "prodotto", "prezzo"];
+        const data2 = [
+            {
+                id: 1,
+                prodotto: "hamburger",
+                prezzo: 3.99,
+            },
+            {
+                id: 1,
+                prodotto: "hamburger",
+                prezzo: 3.99,
+            },
+            {
+                id: 1,
+                prodotto: "hamburger",
+                prezzo: 3.99,
+            },
+        ];
+
+        const tabella2 = new Tabella(nomiColonne2, data2);
+
+    </script>
+
+</body>
+
+</html>

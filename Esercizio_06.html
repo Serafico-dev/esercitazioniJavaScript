@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio 06</title>
+</head>
+
+<body>
+
+    <table id="tabellina" style="border: 1px solid black">
+        <thead>
+            <th>ID</th>
+            <th>NOME</th>
+            <th>COGNOME</th>
+            <th>EMAIL</th>
+            <th>CODICE FISCALE</th>
+            <th>INDIRIZZO</th>
+        </thead>
+    </table>
+
+    <script>
+
+        const arr = [
+            {
+                id: "Serafico",
+                nome: "Federico",
+                cognome: "Mereu",
+                email: "federico.mereu@outlook.it",
+                codiceFiscale: "MREFRC95L04G642Y",
+                indirizzo: "Via Cenischia 50/9"
+            },
+            {
+                id: "Puppina",
+                nome: "Linda",
+                cognome: "Ianniello",
+                email: "ianniello.linda@gmail.it",
+                codiceFiscale: "NNLLND00O04G642Z",
+                indirizzo: "Via Bianzè 25"
+            },
+            {
+                id: "Negus",
+                nome: "Coby",
+                cognome: "Junior",
+                email: "coby.thebest@niggas.it",
+                codiceFiscale: "CBOJNR97G04L624Y",
+                indirizzo: "Via Cenischia 50/1"
+            },
+        ];
+
+        arr.forEach(data => {
+            tabellaInput(data);
+        });
+
+        function tabellaInput(data) {
+
+            const row1 = document.createElement("tr");
+            const col1 = document.createElement("td");
+            col1.appendChild(document.createTextNode(data.id));
+            row1.appendChild(col1);
+            tabellina.appendChild(row1);
+
+            const col2 = document.createElement("td");
+            col2.appendChild(document.createTextNode(data.nome));
+            row1.appendChild(col2);
+            tabellina.appendChild(row1);
+
+            const col3 = document.createElement("td");
+            col3.appendChild(document.createTextNode(data.cognome));
+            row1.appendChild(col3);
+            tabellina.appendChild(row1);
+
+            const col4 = document.createElement("td");
+            col4.appendChild(document.createTextNode(data.email));
+            row1.appendChild(col4);
+            tabellina.appendChild(row1);
+
+            const col5 = document.createElement("td");
+            col5.appendChild(document.createTextNode(data.codiceFiscale));
+            row1.appendChild(col5);
+            tabellina.appendChild(row1);
+
+            const col6 = document.createElement("td");
+            col6.appendChild(document.createTextNode(data.indirizzo));
+            row1.appendChild(col6);
+            tabellina.appendChild(row1);
+
+        };
+
+        /*  soluzione di Edoardo
+        
+                const table = document.getElementById("tabellina");
+        
+                arr.forEach((element) => {
+                    const row = document.createElement("tr");
+        
+                    Object.keys(element).forEach((key) => {
+                        const column = document.createElement("td");
+                        const text = document.createTextNode(element[key]);
+                        column.appendChild(text);
+                        row.appendChild(column);
+                    });
+        
+                    table.appendChild(row);
+                }); */
+
+    </script>
+
+</body>
+
+</html>

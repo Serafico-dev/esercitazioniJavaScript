@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio 03</title>
+</head>
+
+<body>
+
+    <script>
+
+        let arrei = [];
+        const numeroElementi = 10;
+        const max = 100;
+        arrei.length = Math.floor(Math.random() * numeroElementi + 1);
+        let sommatotale = 0;
+
+        for (let i = 0; i < arrei.length; i++) {
+            arrei[i] = Math.floor(Math.random() * max + 1);
+            sommatotale = arrei[i] + sommatotale;
+        }
+
+        console.log(arrei);
+        console.log(`La somma totale degli elementi dell'array è ${sommatotale}`);
+
+    </script>
+
+</body>
+
+</html>

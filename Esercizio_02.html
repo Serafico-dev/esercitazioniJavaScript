@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio 02</title>
+</head>
+
+<body>
+
+    <script>
+
+        let arrayProva = [];
+        arrayProva.length = Math.floor(Math.random() * 9 + 1);
+
+        for (let i = 0; i < arrayProva.length; i++) {
+            arrayProva[i] = (Math.floor(Math.random() * 99));
+            if (arrayProva[i] % 2 == 0) {
+                console.log(arrayProva[i] + " è un numero pari")
+                const element = document.createElement("p");
+                const text = document.createTextNode(arrayProva[i] + " è un numero pari");
+                element.appendChild(text);
+                document.querySelector("body").appendChild(element);
+            }
+            else {
+                console.log(arrayProva[i] + " è un numero dispari")
+                const element2 = document.createElement("p");
+                const text2 = document.createTextNode(arrayProva[i] + " è un numero dispari");
+                element2.appendChild(text2);
+                document.querySelector("body").appendChild(element2);
+
+            }
+        }
+
+
+        console.log(arrayProva);
+
+    </script>
+
+</body>
+
+</html>

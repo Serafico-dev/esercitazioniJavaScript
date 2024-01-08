@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercizio 04</title>
+</head>
+
+<body>
+
+    <div>
+        <label for="data1">Data più recente</label>
+        <input type="date" name="data1" id="data1">
+    </div>
+
+    <div>
+        <label for="data1">Data meno recente</label>
+        <input type="date" name="data2" id="data2">
+    </div>
+    <button onclick="calcola()">Calcola differenza in giorni</button>
+
+    <script>
+
+        const data1 = document.querySelector("#data1");
+        const data2 = document.querySelector("#data2");
+
+        function calcola() {
+            const data1milli = new Date(data1.value).getTime();
+            const data2milli = new Date(data2.value).getTime();
+
+            if (data2milli > data1milli) {
+                diff = ((data2milli - data1milli) / 1000) / 86400;
+                console.log(`C'è una differenza di ${diff} giorni`);
+            }
+            else {
+                console.log("La data 1 dev'essere maggiore della data 2")
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>
